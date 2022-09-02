@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\common">
+      <UniqueIdentifier>{001b50e8-bec9-4673-8823-668113a2a024}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\common">
+      <UniqueIdentifier>{be3beb04-06e9-4697-a97a-75797bb8b07f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\AntiVirus">
+      <UniqueIdentifier>{856e9278-54c5-40f9-905d-1189dfbfa445}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\AntiVirus">
+      <UniqueIdentifier>{d6d938d2-d613-49a4-9bb4-a95edd4487b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Cleaner">
+      <UniqueIdentifier>{1c5950f0-5994-4a8f-93f9-fd9a57e17f9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Cleaner">
+      <UniqueIdentifier>{64a51351-b5ff-4fe2-976a-d53ca744adad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\About">
+      <UniqueIdentifier>{4b202d1b-6d3f-4253-afd7-69077c251530}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\About">
+      <UniqueIdentifier>{71395a9f-30e4-462e-9a3d-39e1b0ff8db1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Network">
+      <UniqueIdentifier>{26640428-4fa9-4ae0-a2c3-cc77b2f7f81d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Network">
+      <UniqueIdentifier>{7722b17e-ba16-438f-a96b-09b4ffe3b313}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\common\gx">
+      <UniqueIdentifier>{974e6667-a6eb-4e43-bbdf-5775e90c0803}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\common\gx">
+      <UniqueIdentifier>{1bf85129-b3c2-4c1a-9224-a21d1c21dff4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HomeWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="avmsgebox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common.h">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="scancmds.h">
+      <Filter>Header Files\AntiVirus</Filter>
+    </ClInclude>
+    <ClInclude Include="avdb.h">
+      <Filter>Header Files\AntiVirus</Filter>
+    </ClInclude>
+    <ClInclude Include="settings.h">
+      <Filter>Header Files\AntiVirus</Filter>
+    </ClInclude>
+    <ClInclude Include="cleaner.h">
+      <Filter>Header Files\Cleaner</Filter>
+    </ClInclude>
+    <ClInclude Include="cleanupapi.h">
+      <Filter>Header Files\Cleaner</Filter>
+    </ClInclude>
+    <ClInclude Include="WaitForClean.h">
+      <Filter>Header Files\Cleaner</Filter>
+    </ClInclude>
+    <ClInclude Include="WaitForStart.h">
+      <Filter>Header Files\Cleaner</Filter>
+    </ClInclude>
+    <ClInclude Include="CleaningThreads.h">
+      <Filter>Header Files\Cleaner</Filter>
+    </ClInclude>
+    <ClInclude Include="quarantine.h">
+      <Filter>Header Files\AntiVirus</Filter>
+    </ClInclude>
+    <ClInclude Include="egavicon.h">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="scanner.h">
+      <Filter>Header Files\AntiVirus</Filter>
+    </ClInclude>
+    <ClInclude Include="AboutPopup.h">
+      <Filter>Header Files\About</Filter>
+    </ClInclude>
+    <ClInclude Include="AboutPanel.h">
+      <Filter>Header Files\About</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="helpDoc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CheckNet.h">
+      <Filter>Header Files\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="sendrecv.h">
+      <Filter>Header Files\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="datetime.h">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="gxDelPointer.h">
+      <Filter>Header Files\common\gx</Filter>
+    </ClInclude>
+    <ClInclude Include="gxClickText.h">
+      <Filter>Header Files\common\gx</Filter>
+    </ClInclude>
+    <ClInclude Include="gxTextCtrlURL.h">
+      <Filter>Header Files\common\gx</Filter>
+    </ClInclude>
+    <ClInclude Include="GetFileFromNet.h">
+      <Filter>Header Files\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="VirusDetails.h">
+      <Filter>Header Files\AntiVirus</Filter>
+    </ClInclude>
+    <ClInclude Include="SendMsgToService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ScanPopup.h">
+      <Filter>Header Files\AntiVirus</Filter>
+    </ClInclude>
+    <ClInclude Include="ScanPanel.h">
+      <Filter>Header Files\AntiVirus</Filter>
+    </ClInclude>
+    <ClInclude Include="gxButton.h">
+      <Filter>Header Files\common\gx</Filter>
+    </ClInclude>
+    <ClInclude Include="gxfunctions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="egavsetgetdb.h">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="uniqid.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="avtheme.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="selog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lastline.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HomeWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="avmsgebox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="avdb.cpp">
+      <Filter>Source Files\AntiVirus</Filter>
+    </ClCompile>
+    <ClCompile Include="scancmds.cpp">
+      <Filter>Source Files\AntiVirus</Filter>
+    </ClCompile>
+    <ClCompile Include="settings.cpp">
+      <Filter>Source Files\AntiVirus</Filter>
+    </ClCompile>
+    <ClCompile Include="cleaner.cpp">
+      <Filter>Source Files\Cleaner</Filter>
+    </ClCompile>
+    <ClCompile Include="cleanupapi.cpp">
+      <Filter>Source Files\Cleaner</Filter>
+    </ClCompile>
+    <ClCompile Include="WaitForClean.cpp">
+      <Filter>Source Files\Cleaner</Filter>
+    </ClCompile>
+    <ClCompile Include="WaitForStart.cpp">
+      <Filter>Source Files\Cleaner</Filter>
+    </ClCompile>
+    <ClCompile Include="CleaningThreads.cpp">
+      <Filter>Source Files\Cleaner</Filter>
+    </ClCompile>
+    <ClCompile Include="quarantine.cpp">
+      <Filter>Source Files\AntiVirus</Filter>
+    </ClCompile>
+    <ClCompile Include="egavicon.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="scanner.cpp">
+      <Filter>Source Files\AntiVirus</Filter>
+    </ClCompile>
+    <ClCompile Include="AboutPopup.cpp">
+      <Filter>Source Files\About</Filter>
+    </ClCompile>
+    <ClCompile Include="AboutPanel.cpp">
+      <Filter>Source Files\About</Filter>
+    </ClCompile>
+    <ClCompile Include="helpDoc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CheckNet.cpp">
+      <Filter>Source Files\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="sendrecv.cpp">
+      <Filter>Source Files\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="datetime.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="gxClickText.cpp">
+      <Filter>Source Files\common\gx</Filter>
+    </ClCompile>
+    <ClCompile Include="gxTextCtrlURL.cpp">
+      <Filter>Source Files\common\gx</Filter>
+    </ClCompile>
+    <ClCompile Include="GetFileFromNet.cpp">
+      <Filter>Source Files\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="VirusDetails.cpp">
+      <Filter>Source Files\AntiVirus</Filter>
+    </ClCompile>
+    <ClCompile Include="SendMsgToService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ScanPopup.cpp">
+      <Filter>Source Files\AntiVirus</Filter>
+    </ClCompile>
+    <ClCompile Include="ScanPanel.cpp">
+      <Filter>Source Files\AntiVirus</Filter>
+    </ClCompile>
+    <ClCompile Include="gxfunctions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="egavsetgetdb.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="uniqid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="selog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lastline.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="EGAntiVirus.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

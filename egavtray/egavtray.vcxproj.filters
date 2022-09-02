@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\common">
+      <UniqueIdentifier>{22d77574-d062-4796-a3d8-4be55ca030a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\common">
+      <UniqueIdentifier>{22517e64-4437-490a-a984-fd5377dbc898}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\common\gx">
+      <UniqueIdentifier>{63a875d0-e96b-4313-8c97-8b9d37d4b912}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\common\gx">
+      <UniqueIdentifier>{4970810b-1509-4e7d-9f98-cbc5aad06c5c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="HomeTrayWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EGAntiVirus\common.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EGAntiVirus\avmsgebox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EGAntiVirus\CheckNet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EGAntiVirus\egavicon.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EGAntiVirus\uniqid.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EGAntiVirus\datetime.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="winevent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EGAntiVirus\gxfunctions.cpp">
+      <Filter>Source Files\common\gx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EGAntiVirus\gxClickText.cpp">
+      <Filter>Source Files\common\gx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EGAntiVirus\gxTextCtrlURL.cpp">
+      <Filter>Source Files\common\gx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EGAntiVirus\GetFileFromNet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EGAntiVirus\SendMsgToService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EGAntiVirus\egavsetgetdb.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EGAntiVirus\selog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="HomeTrayWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EGAntiVirus\common.h">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EGAntiVirus\avtheme.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EGAntiVirus\avmsgebox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EGAntiVirus\CheckNet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EGAntiVirus\egavicon.h">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EGAntiVirus\uniqid.h">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EGAntiVirus\datetime.h">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="winevent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EGAntiVirus\gxfunctions.h">
+      <Filter>Header Files\common\gx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EGAntiVirus\gxClickText.h">
+      <Filter>Header Files\common\gx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EGAntiVirus\gxDelPointer.h">
+      <Filter>Header Files\common\gx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EGAntiVirus\gxTextCtrlURL.h">
+      <Filter>Header Files\common\gx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EGAntiVirus\GetFileFromNet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EGAntiVirus\SendMsgToService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EGAntiVirus\egavsetgetdb.h">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EGAntiVirus\selog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="egavtray.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

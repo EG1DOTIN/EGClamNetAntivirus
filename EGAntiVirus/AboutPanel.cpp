@@ -29,11 +29,11 @@ AboutPanel::AboutPanel(const wxString& title, wxWindow* parent) :wxPanel(parent,
 		wxString info[10];
 		long infolenght[10];
 		info[0] = wxT("Copyright:");
-		info[1] = wxT(" © 2022 EG1, All Rights Reserved\n");
+		info[1] = wxT(" © 2023 EG1, All Rights Reserved\n");
 		info[2] = wxT("Website:");
 		info[3] = wxT(" http://av.eg1.in/ \n");
 		info[4] = wxT("Email:");
-		info[5] = wxT(" < mailto:eg1dotin@gmail.com > \n");
+		info[5] = wxT(" < mailto:egclamav@gmail.com > \n");
 
 		size_t infocount = _ARRAYSIZE(info);
 

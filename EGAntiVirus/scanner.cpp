@@ -36,7 +36,7 @@ ScannerWin::ScannerWin(const wxString& title, const wxString& scanningType, cons
 	Connect(ID_SCANNER_BUTTON, wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler(ScannerWin::OnBtnstop));
 	Connect(ID_SCANNER_TIMER, wxEVT_TIMER, wxTimerEventHandler(ScannerWin::OnTimerScanner));
 	Connect(ID_FSCANNER_TIMER, wxEVT_TIMER, wxTimerEventHandler(ScannerWin::OnTimerFastScanner));
-	
+	Connect(ID_TEXT_ANIMATION_TIMER, wxEVT_TIMER, wxTimerEventHandler(ScannerWin::OnTimerTextAnimation));
 
 	m_PanelAll = new wxPanel(this);
 	m_PanelTextHeading = new wxPanel(m_PanelAll);
@@ -47,6 +47,7 @@ ScannerWin::ScannerWin(const wxString& title, const wxString& scanningType, cons
 
 	m_TimerScanner = new wxTimer(this, ID_SCANNER_TIMER);
 	m_TimerFScanner = new wxTimer(this, ID_FSCANNER_TIMER);
+	m_TimerTextAnimation = new wxTimer(this, ID_TEXT_ANIMATION_TIMER);
 	m_idleS = new wxIdleEvent;
 
 	m_TextHeading = new wxStaticText(m_PanelTextHeading, -1, scanningType);
@@ -57,16 +58,26 @@ ScannerWin::ScannerWin(const wxString& title, const wxString& scanningType, cons
 	m_SHTextHeading->Add(m_TextHeading, 1, wxALIGN_CENTER, 10);
 	m_PanelTextHeading->SetSizer(m_SHTextHeading);
 
+#ifdef SCANNER_GIF
 	m_animationCtrl = new wxAnimationCtrl(m_PanelTextProgress, -1);
 	m_animationCtrl->SetBackgroundColour(EGAV_WINDOW_BACK_COLOR1);
 
 	if (m_animationCtrl->LoadFile(workingDir + wxT("\\Resources\\egav.gif"), wxANIMATION_TYPE_GIF))
 		m_animationCtrl->Play();
 
-
 	m_SHTextProgress = new wxBoxSizer(wxHORIZONTAL);
 	m_SHTextProgress->Add(m_animationCtrl, 1, wxALIGN_CENTER, 10);
 	m_PanelTextProgress->SetSizer(m_SHTextProgress);
+#else
+	m_maxNumAnimateChars = 11;
+	m_NumAnimateChars = 10;
+	m_animationText = new wxStaticText(m_PanelTextProgress, -1, getAnimatedString());
+	m_animationText->SetFont(wxFont(20, wxFONTFAMILY_DECORATIVE, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL));
+	m_animationText->SetForegroundColour(*wxWHITE);
+	m_SHTextProgress = new wxBoxSizer(wxHORIZONTAL);
+	m_SHTextProgress->Add(m_animationText, 0, wxALIGN_CENTER, 10);
+	m_PanelTextProgress->SetSizer(m_SHTextProgress);
+#endif
 
 	wxString textScanning = (m_isFastScan == AVDB_TR) ? wxT("scanning...") : wxT("Please wait, loading virus signature database...");
 	m_TextScanning = new wxStaticText(m_PanelTextScanning, -1, textScanning, wxDefaultPosition, wxSize(550, 30));
@@ -172,13 +183,19 @@ ScannerWin::ScannerWin(const wxString& title, const wxString& scanningType, cons
 		m_processScanner->Redirect();
 		m_idleS->GetMode();
 		SendMsgToService(SERVICE_CONTROL_CUSTOM_MSG_STOP_CLAMD);
-		m_TimerScanner->Start(250,false);
+		m_TimerScanner->Start(100,false);
+#ifndef SCANNER_GIF
+		m_TimerTextAnimation->Start(100, false);
+#endif
 	}
 	else
 	{
 		m_ClamdLogsFile = AppDataEGAVPath + wxT("\\ClamdLog.txt");
 		m_processScanner = wxProcess::Open(m_CmdToScan, wxEXEC_ASYNC | wxEXEC_HIDE_CONSOLE);
-		m_TimerFScanner->Start(250, false);
+		m_TimerFScanner->Start(100, false);
+#ifndef SCANNER_GIF
+		m_TimerTextAnimation->Start(100, false);
+#endif
 	}
 
 	gbScanSwitch = true;
@@ -195,7 +212,12 @@ void ScannerWin::OnBtnstop(wxCommandEvent& btnEvent)
 		if (m_TimerScanner->IsRunning())
 			m_TimerScanner->Stop();
 		wxProcess::Kill(m_processScanner->GetPid(), wxSIGINT, wxKILL_NOCHILDREN);
+		
+#ifdef SCANNER_GIF
 		m_animationCtrl->Stop();
+#else
+		m_animationText->SetLabelText("");
+#endif
 
 		Hide();
 
@@ -226,7 +248,12 @@ void ScannerWin::OnBtnstop(wxCommandEvent& btnEvent)
 
 		wxProcess::Kill(m_processScanner->GetPid(), wxSIGINT, wxKILL_NOCHILDREN);
 		SendMsgToService(SERVICE_CONTROL_CUSTOM_MSG_STOP_CLAMD);
+
+#ifdef SCANNER_GIF
 		m_animationCtrl->Stop();
+#else
+		m_animationText->SetLabelText("");
+#endif
 		Hide();
 
 		AVShowMsgWait(wxT("Please wait, terminating ") + m_ScanType + wxT("..."), 5, true, wxT(""));
@@ -295,8 +322,13 @@ void ScannerWin::OnTimerScanner(wxTimerEvent& tmrEvent)
 		else
 		{
 			m_TimerScanner->Stop();
+		
+#ifdef SCANNER_GIF
 			m_animationCtrl->Stop();
-			
+#else
+			m_animationText->SetLabelText("");
+#endif
+
 			/*
 			AVShowMsg(
 				EGAV_ADMIN_PANEL_TITLE,
@@ -325,8 +357,12 @@ void ScannerWin::OnTimerScanner(wxTimerEvent& tmrEvent)
 	else
 	{
 		m_TimerScanner->Stop();
+		
+#ifdef SCANNER_GIF
 		m_animationCtrl->Stop();
-
+#else
+		m_animationText->SetLabelText("");
+#endif
 		Hide();
 
 		SendMsgToService(SERVICE_CONTROL_CUSTOM_MSG_START_CLAMD);
@@ -396,7 +432,12 @@ void ScannerWin::OnTimerFastScanner(wxTimerEvent & tmrEvent)
 		else
 		{
 			m_TimerFScanner->Stop();
+			
+#ifdef SCANNER_GIF
 			m_animationCtrl->Stop();
+#else
+			m_animationText->SetLabelText("");
+#endif
 
 			/*
 			AVShowMsg(
@@ -416,9 +457,11 @@ void ScannerWin::OnTimerFastScanner(wxTimerEvent & tmrEvent)
 	else
 	{
 		m_TimerFScanner->Stop();
-
+#ifdef SCANNER_GIF
 		m_animationCtrl->Stop();
-
+#else
+		m_animationText->SetLabelText("");
+#endif
 		Hide();
 
 		/*
@@ -490,6 +533,22 @@ void ScannerWin::OnTimerFastScanner(wxTimerEvent& tmrEvent)
 }
 #endif
 
+#ifndef SCANNER_GIF
+void ScannerWin::OnTimerTextAnimation(wxTimerEvent& tmrEvent)
+{
+	if (m_TimerScanner->IsRunning() || m_TimerFScanner->IsRunning())
+	{
+		m_NumAnimateChars = (m_NumAnimateChars > 0 && m_NumAnimateChars < m_maxNumAnimateChars) ? m_NumAnimateChars + 1 : 1;
+		m_animationText->SetLabelText(getAnimatedString());
+	}
+	else
+	{
+		m_animationText->SetLabelText("");
+		m_TimerTextAnimation->Stop();
+	}
+}
+#endif
+
 
 void ScannerWin::OnClose(wxCloseEvent& event)
 {
@@ -497,7 +556,12 @@ void ScannerWin::OnClose(wxCloseEvent& event)
 	{
 		//stop scanning
 		m_TimerScanner->Stop();
+#ifdef SCANNER_GIF
 		m_animationCtrl->Stop();
+#else
+		m_TimerTextAnimation->Stop();
+		m_animationText->SetLabelText("");
+#endif
 		wxProcess::Kill(m_processScanner->GetPid(), wxSIGINT, wxKILL_NOCHILDREN);
 
 		Hide();
@@ -523,7 +587,12 @@ void ScannerWin::OnClose(wxCloseEvent& event)
 	else if (m_TimerFScanner->IsRunning())
 	{
 		m_TimerFScanner->Stop();
+#ifdef SCANNER_GIF
 		m_animationCtrl->Stop();
+#else
+		m_TimerTextAnimation->Stop();
+		m_animationText->SetLabelText("");
+#endif
 		wxProcess::Kill(m_processScanner->GetPid(), wxSIGINT, wxKILL_NOCHILDREN);
 		SendMsgToService(SERVICE_CONTROL_CUSTOM_MSG_STOP_CLAMD);
 		Hide();
@@ -538,6 +607,16 @@ void ScannerWin::OnClose(wxCloseEvent& event)
 	gbScanSwitch = false;
 	event.Skip();
 	Destroy();
+}
+
+wxString ScannerWin::getAnimatedString()
+{
+	wxString res = "";
+	for (int i = 0; i < m_NumAnimateChars; i++)
+	{
+		res += "*";
+	}
+	return res;
 }
 
 wxString gxMakeScanLogTextFileWithNameNow(const wxString& dirPath)
@@ -593,4 +672,5 @@ size_t getTotalInfectedFiles()
 	files.clear();
 	return n;
 }
+
 

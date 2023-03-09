@@ -316,21 +316,21 @@ void AVHomeWindow::OnBtnScan(wxCommandEvent& btnEvent)
 
 void AVHomeWindow::OnBunttonFacebook(wxCommandEvent& event)
 {
-	wxLaunchDefaultBrowser(wxT("https://www.facebook.com/eg1dotin"), wxBROWSER_NOBUSYCURSOR);
+	wxLaunchDefaultBrowser(wxT("https://www.facebook.com/EGAVF"), wxBROWSER_NOBUSYCURSOR);
 }
 
 void AVHomeWindow::OnBunttonTwitter(wxCommandEvent& event)
 {
-	wxLaunchDefaultBrowser(wxT("https://twitter.com/eg1dotin"), wxBROWSER_NOBUSYCURSOR);
+	wxLaunchDefaultBrowser(wxT("https://twitter.com/EGAV7"), wxBROWSER_NOBUSYCURSOR);
 }
 
 void AVHomeWindow::OnBunttonGoogle(wxCommandEvent& event)
 {
-	//wxLaunchDefaultBrowser(wxT("https://www.youtube.com/channel/UCozNmrss2AVE7naw4neqHGg"), wxBROWSER_NOBUSYCURSOR);
+	//wxLaunchDefaultBrowser(wxT(""), wxBROWSER_NOBUSYCURSOR);
 }
 
 void AVHomeWindow::OnBunttonInstagram(wxCommandEvent& event)
 {
-	wxLaunchDefaultBrowser(wxT("https://www.instagram.com/eg1dotin"), wxBROWSER_NOBUSYCURSOR);
+	wxLaunchDefaultBrowser(wxT("https://www.instagram.com/egclamav/"), wxBROWSER_NOBUSYCURSOR);
 }
 

@@ -59,8 +59,8 @@ IDI_ICON1               ICON                    "egav.ico"
 //
 
 VS_VERSION_INFO VERSIONINFO
-FILEVERSION 0,1,0,5
-PRODUCTVERSION 0, 1, 0, 5
+FILEVERSION 1,0,1,0
+PRODUCTVERSION 1, 0, 1, 0
 FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
 FILEFLAGS 0x1L
@@ -75,14 +75,13 @@ BLOCK "StringFileInfo"
 BEGIN
 BLOCK "040904b0"
 BEGIN
-VALUE "CompanyName", "EG1"
 VALUE "FileDescription", "EG ClamNet AntiVirus Scanner"
-VALUE "FileVersion", "0.105.0"
+VALUE "FileVersion", "1.0.1.0"
 VALUE "InternalName", "egavscanner.exe"
-VALUE "LegalCopyright", "© 2022 EG1, All Rights Reserved"
+VALUE "LegalCopyright", "© 2023 EG1, All Rights Reserved"
 VALUE "OriginalFilename", "egavscanner.exe"
 VALUE "ProductName", "EG ClamNet AntiVirus"
-VALUE "ProductVersion", "0.105"
+VALUE "ProductVersion", "1.0.1.0"
 END
 END
 BLOCK "VarFileInfo"

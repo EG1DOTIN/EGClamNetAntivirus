@@ -27,7 +27,7 @@ END_EVENT_TABLE()
 
 /*
 "EG ClamNet Antivirus \n"
-"© 2022 EG1"
+"© 2023 EG1"
 */
 
 /*
@@ -35,26 +35,26 @@ static const char * const title = "EG ClamNet Antivirus";
 static const char * const message
 = "EG ClamNet Antivirus is Active"
 "\n"
-"© 2022 EG1";
+"© 2023 EG1";
 */
 
 const wxString IconStrU(
 "Up To Date \n"
 "SYSTEM IS SECURED \n"
 "EG ClamNet AntiVirus\n"
-"© 2022 EG1");
+"© 2023 EG1");
 
 const wxString IconStrN(
 	"Out Of Date  \n"
 	"AV SIG. NOT UPDATED\n"
 	"EG ClamNet AntiVirus \n"
-	"© 2022 EG1");
+	"© 2023 EG1");
 
 const wxString IconStrC(
 	"System At Risk \n"
 	"REAL-TIME PROTECTON IS OFF\n"
 	"EG ClamNet AntiVirus \n"
-	"© 2022 EG1");
+	"© 2023 EG1");
 
 const wxString BaloonStrU(wxT("EG ClamNet AntiVirus is up-to-date\n"));
 const wxString BaloonStrN(wxT("EG ClamNet AntiVirus is out-of-date\n"));
@@ -265,8 +265,8 @@ static void InitAboutInfoMinimal(wxAboutDialogInfo& info)
 	info.SetWebSite(wxT("http://av.eg1.in"));
 	info.SetIcon(AppIcon);
 	info.SetName(EGAV_TITLE_NAME);
-	info.SetVersion(wxT("0.105"));
-	info.SetCopyright(wxT("(C) 2022 EG1, All Rights Reserved"));
+	info.SetVersion(wxT("1.0.1.0"));
+	info.SetCopyright(wxT("(C) 2023 EG1, All Rights Reserved"));
 }
 
 

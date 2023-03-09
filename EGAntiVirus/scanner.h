@@ -1,6 +1,8 @@
 #ifndef SCANNER_HEADER
 #define SCANNER_HEADER
 
+//#define SCANNER_GIF
+
 #include <wx\wx.h>
 #include <wx\animate.h>
 #include "gxButton.h"
@@ -14,7 +16,7 @@ public:
 	void OnTimerScanner(wxTimerEvent& tmrEvent);
 	void OnTimerFastScanner(wxTimerEvent& tmrEvent);
 	wxString VirusCountStr(int viruscount);
-
+	
 	wxPanel* m_PanelAll;
 	wxPanel* m_PanelTextHeading;
 	wxPanel* m_PanelTextProgress;
@@ -46,10 +48,20 @@ public:
 	wxString m_ClamdLogsFile;
 	wxString m_LastVirusDetected;
 
+#ifdef SCANNER_GIF
 	wxAnimationCtrl*    m_animationCtrl;
+#else
+	wxTimer* m_TimerTextAnimation;
+	wxStaticText* m_animationText;
+	int m_NumAnimateChars;
+	int m_maxNumAnimateChars;
+	wxString getAnimatedString();
+	void OnTimerTextAnimation(wxTimerEvent& tmrEvent);
+#endif
 
 	wxTimer* m_TimerScanner;
 	wxTimer* m_TimerFScanner;
+	
 
 	int m_VirusCount;
 	size_t nFiles1, nFiles2;
@@ -75,6 +87,7 @@ enum eBTN_ID19
 	ID_SCANNER_BUTTON = 500, 
 	ID_SCANNER_TIMER,
 	ID_FSCANNER_TIMER,
+	ID_TEXT_ANIMATION_TIMER,
 };
 
 size_t getTotalInfectedFiles();

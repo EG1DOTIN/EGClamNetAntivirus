@@ -112,6 +112,8 @@ bool MyApp::OnInit()
 			if (!bIsSerUpdater)
 			{
 				ConfigClamD(workingDir, AppDataEGAVPath);
+				ExecuteExeUACSilent1W(L"freshclam.exe", L" --install", workingDir, false, NULL);
+				wxMilliSleep(10);
 				ExecuteCmdUACSilentW(L"sc.exe", L"config FreshClam start= auto", L"");
 				wxMilliSleep(10);
 				ExecuteCmdUACSilentW(L"sc.exe", L"start FreshClam", L"");
@@ -127,6 +129,8 @@ bool MyApp::OnInit()
 			if (!bIsSerScanner)
 			{
 				ConfigClamD(workingDir, AppDataEGAVPath);
+				ExecuteExeUACSilent1W(L"clamd.exe", L" --install", workingDir, false, NULL);
+				wxMilliSleep(10);
 				ExecuteCmdUACSilentW(L"sc.exe", L"config ClamD start= auto", L"");
 				wxMilliSleep(10);
 				wxExecute(wxT("sc start ClamD"), wxEXEC_ASYNC | wxEXEC_HIDE_CONSOLE);
@@ -196,7 +200,11 @@ void ConfigClamD(const wxString& WorkingDir, const wxString& AppDataDir)
 
 void checkUpdate()
 {
-	ExecuteExeUACSilent1W(L"egcnextras.exe", L" \"EGCNAV2.1\"", workingDir, false,  NULL);
+	int chqnet = CheckInternet();
+	if (!chqnet)
+	{
+		ExecuteExeUACSilent1W(L"egcnextras.exe", L" \"EGCNAV1.2\"", workingDir, false, NULL);
+	}
 }
 
 void setMKeyToServer()
